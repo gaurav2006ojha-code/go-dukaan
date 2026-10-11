@@ -1,0 +1,19 @@
+class: Shop
+table: shop
+
+fields:
+  authUser: module:serverpod_auth_core:AuthUser?, relation(onDelete=Cascade)
+
+  shopName: String
+  ownerName: String
+  businessType: String
+  mobile: String
+  city: String
+
+  createdAt: DateTime
+  updatedAt: DateTime
+
+indexes:
+  auth_user_id_unique_idx:
+    fields: authUserId
+    unique: true

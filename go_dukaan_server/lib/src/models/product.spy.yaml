@@ -1,0 +1,28 @@
+class: Product
+table: product
+
+fields:
+  shopId: int, relation(parent=shop)
+
+  name: String
+  sku: String?
+  barcode: String?
+  category: String
+
+  purchasePrice: double
+  sellingPrice: double
+
+  stockQuantity: int
+  lowStockAlert: int
+  unit: String
+
+  isActive: bool
+  createdAt: DateTime
+  updatedAt: DateTime
+
+indexes:
+  product_shop_idx:
+    fields: shopId
+
+  product_barcode_idx:
+    fields: barcode

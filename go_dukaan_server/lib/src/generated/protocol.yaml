@@ -1,0 +1,40 @@
+emailIdp:
+  - login:
+  - startRegistration:
+  - verifyRegistrationCode:
+  - finishRegistration:
+  - startPasswordReset:
+  - verifyPasswordResetCode:
+  - finishPasswordReset:
+  - hasAccount:
+jwtRefresh:
+  - refreshAccessToken:
+customer:
+  - getCustomers:
+  - getCustomer:
+  - createCustomer:
+  - updateCustomer:
+  - deleteCustomer:
+  - searchCustomers:
+product:
+  - getProducts:
+  - createProduct:
+  - updateProduct:
+  - deleteProduct:
+  - getLowStockProducts:
+purchase:
+  - createPurchase:
+  - getPurchases:
+  - getPurchaseItems:
+report:
+  - getMonthlyReport:
+sale:
+  - getSales:
+  - getSale:
+  - getSaleItems:
+  - createSale:
+shop:
+  - getMyShop:
+  - saveShop:
+greeting:
+  - hello:

@@ -1,0 +1,34 @@
+﻿.dart_tool/
+.pub-cache/
+.pub/
+build/
+.serverpod/
+**/pgdata/
+**/postgres.log
+**/postgres.password
+**/postgres.pid
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+key.properties
+
+# Local AI and skill repositories
+.agents/
+.dart_skills/
+
+# Backup files
+*.backup
+*.bak
+
+# Local editor MCP configuration
+.vscode/mcp.json
+
+*.backup
+
+go_dukaan_server/config/passwords.yaml
+
+# Local files containing credentials
+go_dukaan_server/docker-compose.yaml
+.vscode/tasks.json

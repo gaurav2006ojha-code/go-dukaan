@@ -1,0 +1,23 @@
+class: Customer
+table: customer
+
+fields:
+  shopId: int, relation(parent=shop)
+
+  name: String
+  mobile: String?
+  email: String?
+  address: String?
+
+  totalDue: double
+  totalPaid: double
+
+  createdAt: DateTime
+  updatedAt: DateTime
+
+indexes:
+  customer_shop_idx:
+    fields: shopId
+
+  customer_mobile_idx:
+    fields: mobile

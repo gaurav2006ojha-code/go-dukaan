@@ -1,0 +1,13 @@
+class: Purchase
+table: purchases
+fields:
+  shopId: int
+  supplierName: String
+  supplierPhone: String?
+  invoiceNumber: String
+  totalAmount: double
+  paidAmount: double
+  dueAmount: double
+  notes: String?
+  purchasedAt: DateTime
+  createdAt: DateTime

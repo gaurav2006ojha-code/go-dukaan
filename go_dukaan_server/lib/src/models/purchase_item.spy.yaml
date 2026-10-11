@@ -1,0 +1,9 @@
+class: PurchaseItem
+table: purchase_items
+fields:
+  purchaseId: int
+  productId: int
+  productName: String
+  quantity: int
+  unitPurchasePrice: double
+  lineTotal: double

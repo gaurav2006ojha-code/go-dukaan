@@ -1,0 +1,14 @@
+class: MonthlyReport
+fields:
+  monthStart: DateTime
+  totalSales: double
+  totalReceived: double
+  totalSalesDue: double
+  totalDiscount: double
+  totalTax: double
+  totalPurchases: double
+  totalPurchasePaid: double
+  totalPurchaseDue: double
+  grossProfit: double
+  billCount: int
+  purchaseCount: int

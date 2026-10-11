@@ -1,0 +1,23 @@
+
+class: SaleItem
+table: sale_item
+
+fields:
+  saleId: int, relation(parent=sale)
+  productId: int, relation(parent=product)
+
+  productName: String
+  quantity: int
+  unitPrice: double
+  purchasePrice: double
+  discountAmount: double
+  lineTotal: double
+
+  createdAt: DateTime
+
+indexes:
+  sale_item_sale_idx:
+    fields: saleId
+
+  sale_item_product_idx:
+    fields: productId

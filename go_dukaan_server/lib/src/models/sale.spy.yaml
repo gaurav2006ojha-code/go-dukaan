@@ -1,0 +1,33 @@
+
+class: Sale
+table: sale
+
+fields:
+  shopId: int, relation(parent=shop)
+  customerId: int?, relation(parent=customer)
+
+  invoiceNumber: String
+  subtotal: double
+  discountAmount: double
+  taxAmount: double
+  totalAmount: double
+  paidAmount: double
+  dueAmount: double
+
+  paymentMethod: String
+  status: String
+  notes: String?
+
+  createdAt: DateTime
+  updatedAt: DateTime
+
+indexes:
+  sale_shop_idx:
+    fields: shopId
+
+  sale_customer_idx:
+    fields: customerId
+
+  sale_invoice_unique_idx:
+    fields: shopId, invoiceNumber
+    unique: true
