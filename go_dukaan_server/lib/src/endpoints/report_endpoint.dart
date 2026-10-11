@@ -88,8 +88,7 @@ class ReportEndpoint extends Endpoint {
 
     // Gross profit uses pre-tax sales after bill discount, minus item cost.
     // This avoids treating collected tax as business revenue.
-    final grossProfit =
-        totalSales - totalTax - totalCost;
+    final grossProfit = totalSales - totalTax - totalCost;
 
     return MonthlyReport(
       monthStart: start,

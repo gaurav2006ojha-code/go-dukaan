@@ -212,8 +212,7 @@ class CustomerEndpoint extends Endpoint {
       session,
       where: (t) =>
           t.shopId.equals(shop.id!) &
-          (t.name.ilike('%$search%') |
-              t.mobile.ilike('%$search%')),
+          (t.name.ilike('%$search%') | t.mobile.ilike('%$search%')),
       orderBy: (t) => t.name,
     );
   }

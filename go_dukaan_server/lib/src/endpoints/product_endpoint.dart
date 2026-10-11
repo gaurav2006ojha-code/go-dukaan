@@ -192,8 +192,7 @@ class ProductEndpoint extends Endpoint {
     return await Product.db.find(
       session,
       where: (t) =>
-          t.shopId.equals(shop.id!) &
-          (t.stockQuantity <= t.lowStockAlert),
+          t.shopId.equals(shop.id!) & (t.stockQuantity <= t.lowStockAlert),
       orderBy: (t) => t.name,
     );
   }

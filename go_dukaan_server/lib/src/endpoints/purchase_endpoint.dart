@@ -1,4 +1,3 @@
-
 import 'package:serverpod/serverpod.dart';
 import 'package:serverpod_auth_idp_server/core.dart';
 
@@ -64,9 +63,7 @@ class PurchaseEndpoint extends Endpoint {
       final quantity = item['quantity'];
       final rawPrice = item['unitPurchasePrice'];
 
-      if (productId is! int ||
-          quantity is! int ||
-          rawPrice is! num) {
+      if (productId is! int || quantity is! int || rawPrice is! num) {
         throw Exception('Invalid purchase item data.');
       }
 
@@ -188,9 +185,7 @@ class PurchaseEndpoint extends Endpoint {
 
     final purchase = await Purchase.db.findFirstRow(
       session,
-      where: (t) =>
-          t.id.equals(purchaseId) &
-          t.shopId.equals(shop.id!),
+      where: (t) => t.id.equals(purchaseId) & t.shopId.equals(shop.id!),
     );
 
     if (purchase == null) {

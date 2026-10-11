@@ -1,4 +1,3 @@
-
 import 'package:serverpod/serverpod.dart';
 import 'package:serverpod_auth_idp_server/core.dart';
 
@@ -46,9 +45,7 @@ class SaleEndpoint extends Endpoint {
 
     return Sale.db.findFirstRow(
       session,
-      where: (t) =>
-          t.id.equals(saleId) &
-          t.shopId.equals(shop.id!),
+      where: (t) => t.id.equals(saleId) & t.shopId.equals(shop.id!),
     );
   }
 
@@ -60,9 +57,7 @@ class SaleEndpoint extends Endpoint {
 
     final sale = await Sale.db.findFirstRow(
       session,
-      where: (t) =>
-          t.id.equals(saleId) &
-          t.shopId.equals(shop.id!),
+      where: (t) => t.id.equals(saleId) & t.shopId.equals(shop.id!),
     );
 
     if (sale == null) {
@@ -90,8 +85,7 @@ class SaleEndpoint extends Endpoint {
     final shop = await _getMyShop(session);
     final shopId = shop.id!;
 
-    if (productIds.isEmpty ||
-        productIds.length != quantities.length) {
+    if (productIds.isEmpty || productIds.length != quantities.length) {
       throw Exception('Invalid sale items.');
     }
 
@@ -140,8 +134,7 @@ class SaleEndpoint extends Endpoint {
 
     return await session.db.transaction((transaction) async {
       final now = DateTime.now();
-      final invoiceNumber =
-          'GD-$shopId-${now.microsecondsSinceEpoch}';
+      final invoiceNumber = 'GD-$shopId-${now.microsecondsSinceEpoch}';
 
       final List<Product> products = [];
       final List<double> lineTotals = [];
@@ -156,9 +149,7 @@ class SaleEndpoint extends Endpoint {
           transaction: transaction,
         );
 
-        if (product == null ||
-            product.shopId != shopId ||
-            !product.isActive) {
+        if (product == null || product.shopId != shopId || !product.isActive) {
           throw Exception(
             'A selected product is unavailable.',
           );
@@ -206,8 +197,7 @@ class SaleEndpoint extends Endpoint {
         );
       }
 
-      final dueAmount =
-          (totalAmount - paidAmount).clamp(0.0, double.infinity);
+      final dueAmount = (totalAmount - paidAmount).clamp(0.0, double.infinity);
 
       if (paymentMethod == 'Credit' && paidAmount != 0) {
         throw Exception(
